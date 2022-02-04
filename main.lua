@@ -3,7 +3,7 @@ local index = game_metatable.__index
 setreadonly(games_metatable,false)
 games_metatable.__index = function(table,ind)
     if ind == 'Position' and table.Parent == game.Players.LocalPlayer.Character then 
-        return Vector3.new(167, -40, 2512)
+        return Vector3.new(128, 130, -352)
     end
     return index(table,ind)
 end
@@ -55,7 +55,7 @@ local value = Vector3.new(0,10,0)
 			
 		end
 	end
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  CFrame.new(-202, 64, -131)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =  CFrame.new(128, 130, -352)
 	game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 end
 
