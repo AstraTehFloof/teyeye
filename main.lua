@@ -1,3 +1,4 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/AstraTehFloof/teyeye/main/teleport.lua',true))())
 while wait() do
 --Hitpart >
 local hitpart
