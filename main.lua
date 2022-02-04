@@ -1,13 +1,3 @@
-local games_metatable = getrawmetatable(game)
-local index = game_metatable.__index
-setreadonly(games_metatable,false)
-games_metatable.__index = function(table,ind)
-    if ind == 'Position' and table.Parent == game.Players.LocalPlayer.Character then 
-        return Vector3.new(128, 130, -352)
-    end
-    return index(table,ind)
-end
-
 local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
