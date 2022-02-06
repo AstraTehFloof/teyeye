@@ -42,7 +42,7 @@ f:Button(
                     while tpwalking and hb:Wait() and chr and hum and hum.Parent do
                         if hum.MoveDirection.Magnitude > 0 then
                             local args = {
-                                [1] = 3
+                                [1] = 1
                             }
                             if args[1] then
                                 chr:TranslateBy(hum.MoveDirection * tonumber(args[1]))
