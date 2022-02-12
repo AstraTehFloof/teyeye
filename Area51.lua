@@ -70,23 +70,26 @@ f:Button(
         local tool = nil
         for i, v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
             if v:IsA("Tool") then
-                if v.Name == "Hookshot" or v.Name == "Energy" or v.Name == "Landmine" then
+                if v:IsA("LocalScript") then
                     wait()
                 else
                     v = v
                     tool = tostring(v)
+                    if string.find(tool, "PAP", 1) then
+                        error("PAPED Gun found, skipping")
+                    else
+                        local args = {
+                            [1] = tool
+                        }
 
-                    local args = {
-                        [1] = tool
-                    }
+                        game:GetService("ReplicatedStorage"):FindFirstChild("Remote Functions"):FindFirstChild(
+                            "PAP Weapon"
+                        ):InvokeServer(unpack(args))
+                        wait(0.015)
+                        game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").PAPFinished:FireServer()
 
-                    game:GetService("ReplicatedStorage"):FindFirstChild("Remote Functions"):FindFirstChild("PAP Weapon"):InvokeServer(
-                        unpack(args)
-                    )
-                    wait(0.03)
-                    game:GetService("ReplicatedStorage"):FindFirstChild("Remote Events").PAPFinished:FireServer()
-
-                    tool = nil
+                        tool = nil
+                    end
                 end
             end
         end
