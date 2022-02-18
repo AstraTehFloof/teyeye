@@ -1,4 +1,4 @@
---[[ Script made by
+--[[
 I allowed you to use and copy my scripts and paste it into your scripts
 ]]
 
